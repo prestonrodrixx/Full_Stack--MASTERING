@@ -12,10 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/prestonrodrixx/NodeJS.git"
   },
-  "author": "",
+  "author": "Preston Rodrigues",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/prestonrodrixx/NodeJS/issues"
   },
-  "homepage": "https://github.com/prestonrodrixx/NodeJS#readme"
+  "homepage": "https://github.com/prestonrodrixx/NodeJS#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
 }
