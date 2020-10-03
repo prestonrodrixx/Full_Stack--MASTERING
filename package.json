@@ -1,0 +1,21 @@
+{
+  "name": "lnodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Parsing Request Bodies.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "start-server": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prestonrodrixx/NodeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prestonrodrixx/NodeJS/issues"
+  },
+  "homepage": "https://github.com/prestonrodrixx/NodeJS#readme"
+}
