@@ -15,3 +15,4 @@ exports.postAddProduct = (req, res, next) => {
 exports.getProducts = (req, res, next) => {
   res.render("shop", { prods: products, pageTitle: "Shop", path: "/" });
 };
+
