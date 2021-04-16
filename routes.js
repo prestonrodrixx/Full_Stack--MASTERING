@@ -38,7 +38,7 @@ const requestHandler = (req, res) => {
     };
 
 
-exports = {
+module.exports = {
     handler: requestHandler,
-    someText: 'Hello Preston'
+    someText: "Connection Successful"
 };
