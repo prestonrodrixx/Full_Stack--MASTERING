@@ -37,6 +37,8 @@ const requestHandler = (req, res) => {
       res.end();
     };
 
+//      exports.handler = requestHandler;
+//      exports.someText = 'Connection Suffessful';
 
 module.exports = {
     handler: requestHandler,
