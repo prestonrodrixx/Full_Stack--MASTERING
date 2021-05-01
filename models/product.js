@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const { getProducts } = require('../controllers/admin');
+// const { getProducts } = require('../controllers/admin');
 
 const p = path.join(
   path.dirname(process.mainModule.filename),
