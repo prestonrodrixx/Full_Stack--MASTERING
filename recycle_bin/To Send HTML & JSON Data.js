@@ -14,6 +14,7 @@ app.get('/contact', (req, res) => {
 });
 
 app.get('/temp', (req, res) => {
+  // res.json will also convert non objects such as numm and undefined which are not valid json
   res.json([
     {
       id: 1,
