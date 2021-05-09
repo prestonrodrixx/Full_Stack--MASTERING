@@ -1,23 +1,54 @@
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
 const express = require('express');
 const app = express();
 const bcrypt = require('bcrypt');
+const passport = require('passport');
+const flash = require('express-flash');
+const session = require('express-session');
+
+const initializedPassport = require('./passport-config');
+initializedPassport(
+  passport,
+  (email) => users.find((user) => user.email === email),
+  (id) => users.find((user) => user.id === id)
+);
 
 const users = [];
 
 app.set('view-engine', 'ejs');
-
 // To get access from forms to get request from the post method
 app.use(express.urlencoded({ extended: false }));
+app.use(flash());
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
-app.get('/', (req, res) => {
-  res.render('index.ejs', { name: 'Preston' });
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.get('/', checkAuthenticated, (req, res) => {
+  res.render('index.ejs', { name: req.user.name });
 });
 
 app.get('/login', (req, res) => {
   res.render('login.ejs');
 });
 
-app.post('/login', (req, res) => {});
+app.post(
+  '/login',
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login',
+    failureFlash: true,
+  })
+);
 
 app.get('/register', (req, res) => {
   res.render('register.ejs');
@@ -38,5 +69,12 @@ app.post('/register', async (req, res) => {
   }
   console.log(users);
 });
+
+function checkAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}
 
 app.listen(3000);
