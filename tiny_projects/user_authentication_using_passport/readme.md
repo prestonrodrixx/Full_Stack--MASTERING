@@ -1,1 +1,1 @@
-Dont forget to .gitignore the .env file
+Dont forget to .gitignore the .env file.
