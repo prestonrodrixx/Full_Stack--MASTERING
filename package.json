@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/prestonrodrixx/Node_and_Express--MASTERING#readme",
   "devDependencies": {
+    "dotenv": "^9.0.0",
     "nodemon": "^2.0.7"
   },
   "dependencies": {
