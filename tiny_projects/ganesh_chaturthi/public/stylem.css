@@ -1,0 +1,168 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Cinzel', serif;
+}
+
+@font-face {
+font-family: myFirstFont;
+src: url(GanpatiSymbolys.TTF);
+}
+
+header {
+	width: 100%;
+	height: 100vh;
+	background-image: url('back1.png');
+	background-size: 100% 100%
+}
+
+header h2{
+	text-align: center;
+	word-spacing: 10px;
+	font-size: 3.5em;
+	font-weight: 600;
+	animation:  ganpatiji 1s infinite;
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* height: 200px; */
+	/* border: 3px solid green; */
+  }
+
+header h2 span {
+	font-family: myFirstFont;
+}
+
+@keyframes ganpatiji{
+	0%{color:red;}
+	30%{color: pink;}
+	50%{color: #FC8704;}
+	75%{color: #42BFEB;}
+	100%{color: green;}
+}
+
+.input{  
+	box-sizing: padding-box;
+	overflow:hidden;
+	padding:10px;
+	width:50%;
+	font-size:35px;
+	font-weight: 600;
+	margin:0 30PX 0 0;
+	display:block;
+	border-radius:10px;
+	border:6px solid #556677;
+  }
+
+.centering{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+}
+
+.centering p{
+	width: auto;
+	color: #000;
+	text-align: center;
+	font-size: 3em;
+	font-weight: 600;
+	word-spacing: 10px;
+}
+
+@media (max-width: 640px){
+
+header h2{
+
+	word-spacing: 5px;
+	font-size: 3em;
+	}
+
+.centering{
+	margin-top: 60px;
+}
+
+.centering img{
+	width: 250px;
+}
+
+.centering h3{
+	font-size: 1.2em;
+	word-spacing: 0px;
+	width: 100%;
+}
+}
+
+.centering {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:"650px";
+  }
+
+.glow-on-hover {
+    width: 50%;
+    height: 80px;
+	font-size:30px;
+	font-weight: 600;
+    border: none;
+	text-decoration: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
