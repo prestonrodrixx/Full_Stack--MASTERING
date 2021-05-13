@@ -24,22 +24,22 @@
 			Please Enter Your Name Below
 			<% } else  { %>
 				May the blessings of Shree Ganesha be with you and your family forever! <br><br>
-				~ From <%= personName %>  
+				<h2>~ From <%= personName %> </h2> 
 				<% } %>
 		</p>
 		<br><br>
 		<form action="/" method="POST">
 			<!-- <input type="text" name="name" class="input" placeholder='Enter your name...' required=></input> -->
-			<div class="center"><input type="text" name="name" class="input" required placeholder="Enter your name..." oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
+			<div class="center"><input type="text" name="name" class="input" required autocomplete="off" placeholder="Enter your name..." oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
 			<button type="submit" class="glow-on-hover">Submit</button>
 			</div>
 		</form>
 		<br>
 		<% if (strName != null) { %>
 			<div class="center">
-				<a href="http://localhost:3000/?qname=<%= strName %>" class="glow-on-hover center"><%= strName %></a>&nbsp;&nbsp;&nbsp;
-				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/?qname=<%= strName %>" class="glow-on-hover center" target="_blank">Share on Facebook</a>&nbsp;&nbsp;&nbsp;
-				<a href="https://twitter.com/share?url=http://localhost:3000/?qname=<%= strName %>" class="glow-on-hover center" target="_blank">Share on  Twitter</a>
+				<!-- <a href="whatsapp://send?text=http://localhost:3000/m/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center">Share via Whatsapp</a>&nbsp;&nbsp;&nbsp; -->
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share on Facebook</a>&nbsp;&nbsp;&nbsp;
+				<a href="https://twitter.com/share?url=http://localhost:3000/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share on  Twitter</a>
 			</div>
 		<% } %>
 	</div>
