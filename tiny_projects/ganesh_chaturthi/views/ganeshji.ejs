@@ -7,11 +7,14 @@
 		<% } else  { %>
 		<%= personName %> Sent You A Digital Postcard
 		<% } %>
-	</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../public/style.css"> -->
-	
+	</title>	
 	<link rel="stylesheet" type="text/css" href="/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+		<% if (personName == null) { %>
+			<meta name="description" content="Send a digital postcard to your loved ones."/>
+		<% } else  { %>
+			<meta name="description" content="Click to view digital postcard sent by <%= personName %>."/>
+		<% } %>
 </head>
 <body>
 <header>
@@ -29,7 +32,6 @@
 		</p>
 		<br><br>
 		<form action="/ganeshchaturthi/" method="POST">
-			<!-- <input type="text" name="name" class="input" placeholder='Enter your name...' required=></input> -->
 			<div class="center"><input type="text" name="name" class="input" required placeholder="Enter your name..." oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
 			<button type="submit" class="glow-on-hover">Submit</button>
 			</div>

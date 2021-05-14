@@ -7,11 +7,14 @@
 		<% } else  { %>
 		<%= personName %> Sent You A Digital Postcard
 		<% } %>
-	</title>
-	<!-- <link rel="stylesheet" type="text/css" href="../public/style.css"> -->
-	
+	</title>	
 	<link rel="stylesheet" type="text/css" href="/stylem.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+		<% if (personName == null) { %>
+			<meta name="description" content="Send a digital postcard to your loved ones."/>
+		<% } else  { %>
+			<meta name="description" content="Click to view digital postcard sent by <%= personName %>."/>
+		<% } %>
 </head>
 <body>
 <header>
@@ -29,7 +32,6 @@
 		</p>
 		<br><br>
 		<form action="/ganeshchaturthi/" method="POST">
-			<!-- <input type="text" name="name" class="input" placeholder='Enter your name...' required=></input> -->
 			<div class="center">
 				<input type="text" name="name" class="input" required placeholder="Enter your name..." oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
 				<button type="submit" class="glow-on-hover">Submit</button>
@@ -38,7 +40,6 @@
 		<br><br><br><br>
 		<% if (strName != null) { %>
 			<div class="center">
-				<!-- <a href="http://localhost:3000/m/?qname=<%= strName %>" class="glow-on-hover center"><%= strName %></a> -->
 				<a href="whatsapp://send?text=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" data-action="share/whatsapp/share" target="_blank">Share via Whatsapp</a>
 			</div><br>
 			<div class="center">
