@@ -69,7 +69,7 @@ app.post('/ganeshchaturthi/', (req, res) => {
 });
 
 app.use((req, res) => {
-  res.send('Error 404 - Page Not found')
+  res.redirect('/ganeshchaturthi/')
 })
 
 app.listen(PORT);
