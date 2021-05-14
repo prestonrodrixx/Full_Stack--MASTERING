@@ -52,6 +52,7 @@ header h2 span {
 	padding:10px;
 	/* width:250px; */
 	font-size:14px;
+	font-weight: 600;
 	margin:0 30PX 0 0;
 	display:block;
 	border-radius:10px;
@@ -110,6 +111,7 @@ header h2{
     height: 50px;
     border: none;
 	text-decoration: none;
+	font-weight: 600;
     outline: none;
     color: #fff;
     background: #111;
