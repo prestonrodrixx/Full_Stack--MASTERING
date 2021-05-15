@@ -3,18 +3,27 @@
 <head>
 	<title>
 		<% if (personName == null) { %>
-		Ganesh Chaturthi Digital Greeting Card
+			Send Ganesh Chaturthi Digital Postcard To Your Loved Ones. Create Your Digital Postcard Now...
 		<% } else  { %>
-		<%= personName %> Sent You A Digital Postcard
+		<%= personName %> Sent You A Digital Postcard. Tap to view...
 		<% } %>
 	</title>	
 	<link rel="stylesheet" type="text/css" href="/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 		<% if (personName == null) { %>
-			<meta name="description" content="Send a digital postcard to your loved ones."/>
+			<meta property="og:title" content="Send Ganesh Chaturthi Digital Postcard To Your Loved Ones"/>
 		<% } else  { %>
-			<meta name="description" content="Click to view digital postcard sent by <%= personName %>."/>
+			<meta property="og:title" content="<%= personName %> Sent You A Digital Postcard"/>
 		<% } %>
+		<% if (personName == null) { %>
+			<meta property="og:description" content="Customized Digital Postcards and more. Create Your Digital Postcard Now..."/>
+		<% } else  { %>
+			<meta property="og:description" content="Click to view digital postcard sent by <%= personName %>."/>
+		<% } %>
+		<!-- Ezoic Code -->
+		<script>var ezoicId = 265584;</script>
+		<script type="text/javascript" src="//go.ezoic.net/ezoic/ezoic.js"></script>
+		<!-- Ezoic Code -->
 </head>
 <body>
 <header>
@@ -32,16 +41,19 @@
 		</p>
 		<br><br>
 		<form action="/ganeshchaturthi/" method="POST">
-			<div class="center"><input type="text" name="name" class="input" required placeholder="Enter your name..." oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
+			<div class="center"><input type="text" name="name" class="input" required placeholder="Enter your name..." autocomplete="off" oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
 			<button type="submit" class="glow-on-hover">Submit</button>
 			</div>
 		</form>
+		<!-- Ezoic - under_first_paragraph - under_first_paragraph -->
+		<div id="ezoic-pub-ad-placeholder-101"> </div>
+		<!-- End Ezoic - under_first_paragraph - under_first_paragraph -->
 		<br>
 		<% if (strName != null) { %>
 			<div class="center">
-				<a href="https://wa.me/?text=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share via Whatsapp</a>&nbsp;&nbsp;&nbsp;
-				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share on Facebook</a>&nbsp;&nbsp;&nbsp;
-				<a href="https://twitter.com/share?url=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share on  Twitter</a>
+				<a href="https://wa.me/?text=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Send Postcard via Whatsapp</a>&nbsp;&nbsp;&nbsp;
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Send Postcard via Facebook</a>&nbsp;&nbsp;&nbsp;
+				<a href="https://twitter.com/share?url=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Send Postcard via Twitter</a>
 			</div>
 		<% } %>
 	</div>

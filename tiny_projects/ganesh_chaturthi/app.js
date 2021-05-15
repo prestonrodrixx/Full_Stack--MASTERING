@@ -38,7 +38,9 @@ app.get('/ganeshchaturthi/', (req, res) => {
       strNameEncoded: qnameEncoded,
     });
   }
-  console.log(req.protocol + ':' + '//' + req.hostname + ':' + '3000' + req.path);
+  console.log(
+    req.protocol + ':' + '//' + req.hostname + ':' + '3000' + req.path
+  );
 });
 
 app.post('/ganeshchaturthi/', (req, res) => {
@@ -65,11 +67,24 @@ app.post('/ganeshchaturthi/', (req, res) => {
       strNameEncoded: bnameEncoded != null ? bnameEncoded : null,
     });
   }
-  console.log(req.protocol + ':' + '//' + req.hostname + ':' + PORT + req.path + '?qname=' + bnameEncoded);
+  console.log(
+    req.protocol +
+      ':' +
+      '//' +
+      req.hostname +
+      ':' +
+      PORT +
+      req.path +
+      '?qname=' +
+      bnameEncoded
+  );
 });
 
 app.use((req, res) => {
-  res.redirect('/ganeshchaturthi/')
-})
+  res.redirect('/ganeshchaturthi/');
+});
 
-app.listen(PORT);
+app.listen(PORT, (err) => {
+  if (err) console.log(err);
+  console.log('Server listening on PORT', PORT);
+});

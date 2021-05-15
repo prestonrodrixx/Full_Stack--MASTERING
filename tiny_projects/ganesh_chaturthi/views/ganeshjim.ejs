@@ -3,17 +3,22 @@
 <head>
 	<title>
 		<% if (personName == null) { %>
-		Ganesh Chaturthi Digital Greeting Card
+			Send Ganesh Chaturthi Digital Postcard To Your Loved Ones. Create Your Digital Postcard Now...
 		<% } else  { %>
-		<%= personName %> Sent You A Digital Postcard
+		<%= personName %> Sent You A Digital Postcard. Tap to view...
 		<% } %>
 	</title>	
 	<link rel="stylesheet" type="text/css" href="/stylem.css">
 	<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
 		<% if (personName == null) { %>
-			<meta name="description" content="Send a digital postcard to your loved ones."/>
+			<meta property="og:title" content="Send Ganesh Chaturthi Digital Postcard To Your Loved Ones"/>
 		<% } else  { %>
-			<meta name="description" content="Click to view digital postcard sent by <%= personName %>."/>
+			<meta property="og:title" content="<%= personName %> Sent You A Digital Postcard"/>
+		<% } %>
+		<% if (personName == null) { %>
+			<meta property="og:description" content="Customized Digital Postcards and more. Create Your Digital Postcard Now..."/>
+		<% } else  { %>
+			<meta property="og:description" content="Click to view digital postcard sent by <%= personName %>."/>
 		<% } %>
 </head>
 <body>
@@ -33,20 +38,20 @@
 		<br><br>
 		<form action="/ganeshchaturthi/" method="POST">
 			<div class="center">
-				<input type="text" name="name" class="input" required placeholder="Enter your name..." oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
+				<input type="text" name="name" class="input" required placeholder="Enter your name..." autocomplete="off" oninvalid="this.setCustomValidity('Please enter your name...')" oninput="this.setCustomValidity('')"/>
 				<button type="submit" class="glow-on-hover">Submit</button>
 			</div>
 		</form>
 		<br><br><br><br>
 		<% if (strName != null) { %>
 			<div class="center">
-				<a href="whatsapp://send?text=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" data-action="share/whatsapp/share" target="_blank">Share via Whatsapp</a>
+				<a href="whatsapp://send?text=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" data-action="share/whatsapp/share" target="_blank">Send Postcard via Whatsapp</a>
 			</div><br>
 			<div class="center">
-				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share on Facebook</a>
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Send Postcard via Facebook</a>
 			</div><br>
 			<div class="center">
-				<a href="https://twitter.com/share?url=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Share on  Twitter</a>
+				<a href="https://twitter.com/share?url=http://localhost:3000/ganeshchaturthi/?qname=<%= encodeURIComponent(strNameEncoded) %>" class="glow-on-hover center" target="_blank">Send Postcard via Twitter</a>
 			</div>
 		<% } %>
 	</div>
