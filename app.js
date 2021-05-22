@@ -1,16 +1,19 @@
-const express = require('express');
+import express from 'express';
+import bodyParser from 'body-parser';
+
+import usersRoutes from './routes/users.js';
+
 const app = express();
 const PORT = 3000;
 
+app.use(bodyParser.json());
+
+app.use('/users', usersRoutes);
+
 app.get('/', (req, res) => {
-  res.send('Root Directory');
+  res.send('Hello Preston');
 });
 
-app.use((req, res) => {
-  res.status(404).send('404 Page Not Found');
-});
-
-app.listen(PORT, (err) => {
-  if (err) console.log(err);
-  console.log('Server listening on PORT', PORT);
-});
+app.listen(PORT, () =>
+  console.log('Server Running on Port: http://localhost:' + PORT)
+);
