@@ -1,19 +1,9 @@
 import express from 'express';
+import { v4 as uuidv4 } from 'uuid';
 
 const router = express.Router();
 
-const users = [
-  {
-    firstName: 'Preston',
-    lastName: 'Rodrigues',
-    age: 24,
-  },
-  {
-    firstName: 'Preston',
-    lastName: 'Rodrigues',
-    age: 24,
-  },
-];
+const users = [];
 
 router.get('/', (req, res) => {
   console.log(users);
@@ -21,10 +11,19 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  console.log(req.body);
   const user = req.body;
-  users.push(user);
+  const userId = uuidv4();
+  const userWithId = { ...user, id: userId }; // Added ID to the User
+  users.push(userWithId);
   res.send(`User with the name ${user.firstName} added.`);
 });
+
+router.get('/:id', (req, res) => {
+  const { id } = req.params;
+  const foundUser = users.find((user) => user.id == id);
+  res.send(foundUser);
+});
+
+router.delete('/:id',)
 
 export default router;
