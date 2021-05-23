@@ -1,16 +1,27 @@
-const express = require('express');
+import express from 'express';
+import ejs from 'ejs';
+import bodyParser from 'body-parser';
+import yoast from 'yoast';
+
 const app = express();
-const PORT = 3000;
+
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
-  res.send('Root Directory');
+  ejs.renderFile(
+    'index.ejs',
+    {
+      name: 'Preston',
+    },
+    function (err, html) {
+      res.send(html);
+    }
+  );
 });
 
-app.use((req, res) => {
-  res.status(404).send('404 Page Not Found');
+app.post('/', (req, res) => {
+  const url = req.body.url;
+  res.send(url);
 });
 
-app.listen(PORT, (err) => {
-  if (err) console.log(err);
-  console.log('Server listening on PORT', PORT);
-});
+app.listen(3000);
