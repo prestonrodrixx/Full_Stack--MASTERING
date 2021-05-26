@@ -18,11 +18,27 @@ const db = knex({
 
 app.use(express.urlencoded({ extended: true }));
 
+app.get('/:alias', (req, res, next) => {
+  const alias = req.params.alias;
+  if (alias) {
+    db.select('url').from('urls')
+    .from('urls')
+    .where({id: yeast.decode(alias)})
+    .first()
+    .then(urlRow => {
+      res.redirect(urlRow.url);
+    })
+  } else {
+    next();
+  }
+});
+
 app.get('/', (req, res) => {
+  const alias = req.query.alias;
   ejs.renderFile(
     'index.ejs',
     {
-      name: 'Preston',
+      alias,
     },
     function (err, html) {
       res.send(html);
