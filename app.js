@@ -4,6 +4,7 @@ const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.send('Root Directory');
+  console.dir(req.ip);
 });
 
 app.use((req, res) => {

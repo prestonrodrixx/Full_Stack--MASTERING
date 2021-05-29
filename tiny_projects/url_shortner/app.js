@@ -16,20 +16,21 @@ const db = knex({
   },
 });
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.use(express.urlencoded({ extended: true }));
 
 app.get('/:alias', (req, res, next) => {
   const alias = req.params.alias;
   if (alias) {
-    db.select('url').from('urls')
-    .from('urls')
-    .where({id: yeast.decode(alias)})
-    .first()
-    .then(urlRow => {
-      res.redirect(urlRow.url);
-    })
+    db.select('url')
+      .from('urls')
+      .from('urls')
+      .where({ id: yeast.decode(alias) })
+      .first()
+      .then((urlRow) => {
+        res.redirect(urlRow.url);
+      });
   } else {
     next();
   }
