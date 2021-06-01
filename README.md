@@ -31,3 +31,5 @@
 "yeast": "^0.1.2"  
 "yoast": "^1.0.0"  
 "socket.io": "^4.1.2"
+"snowpack": "^3.5.2",
+"socket.io-client": "^4.1.2"
