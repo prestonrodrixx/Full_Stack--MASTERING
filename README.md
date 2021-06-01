@@ -4,11 +4,9 @@
 
 ###### "autoprefixer": "^10.2.5"
 
-"bcrypt": "^5.0.1"
-
-###### "body-parser": "^1.19.0"
-
-###### "browser-sync": "^2.26.14"
+"bcrypt": "^5.0.1"  
+"body-parser": "^1.19.0"  
+"browser-sync": "^2.26.14"
 
 ###### "create-react-app": "^2.1.5"
 
