@@ -1,11 +1,8 @@
 const express = require('express');
 const app = express();
 
-app.get('title');
-// => undefined
+app.get('/', function (req, res) {
+  res.send('GET request to homepage');
+});
 
-app.set('title', 'My Site');
-app.get('title');
-// => "My Site"
-
-console.log(app.get('title'));
+app.listen(3000);
