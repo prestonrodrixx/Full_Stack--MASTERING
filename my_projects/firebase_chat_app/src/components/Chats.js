@@ -33,9 +33,9 @@ const Chats = () => {
     }
 
     axios
-      .get('https://api.chatengine.io/users/me', {
+      .get('https://api.chatengine.io/users/me/', {
         headers: {
-          'project-id': 'da2abe21-d568-449d-9507-2ad41797f70a',
+          'project-id': process.env.REACT_APP_CHAT_ENGINE_ID,
           'user-name': user.email,
           'user-secret': user.uid,
         },
@@ -53,9 +53,9 @@ const Chats = () => {
           formdata.append('avatar', avatar, avatar.name);
 
           axios
-            .post('https://api.chatengine.io/users', formdata, {
+            .post('https://api.chatengine.io/users/', formdata, {
               headers: {
-                'private-key': '2fa1b68c-0c41-4318-ae3f-2a964d42c9ee',
+                'private-key': process.env.REACT_APP_CHAT_ENGINE_KEY,
               },
             })
             .then(() => setLoading(false))
@@ -76,7 +76,7 @@ const Chats = () => {
       </div>
       <ChatEngine
         height="calc(100vh - 66px"
-        projectID="da2abe21-d568-449d-9507-2ad41797f70a"
+        projectID={process.env.REACT_APP_CHAT_ENGINE_ID}
         userName={user.email}
         userSecret={user.uid}
       />
