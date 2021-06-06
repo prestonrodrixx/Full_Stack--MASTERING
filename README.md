@@ -1,3 +1,3 @@
 # Node_and_Express--MASTERING
 
-### Please check "package.json" file to see the different types of packages I've worked with https://github.com/prestonrodrixx/Node_and_Express--MASTERING/blob/master/package.json
+#### Please check "my_projects" folder to check out the different types of application's I've built https://github.com/prestonrodrixx/Node_and_Express--MASTERING/tree/master/my_projects
