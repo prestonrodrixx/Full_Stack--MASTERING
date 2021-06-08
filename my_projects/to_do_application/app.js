@@ -3,6 +3,8 @@ const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
+const PORT = process.env.PORT || 5000;
+
 // Models
 const TodoTask = require('./models/TodoTask');
 
@@ -63,10 +65,10 @@ app.route('/remove/:id').get((req, res) => {
   });
 });
 
-// Connection to db
+// Connection to DB
 mongoose.set('useFindAndModify', false);
 // DB_CONNECT credentials from .env file
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
   console.log('Connected to DB!');
-  app.listen(3000, () => console.log('Server Up and running'));
+  app.listen(PORT, () => console.log('Server Up and Running'));
 });
