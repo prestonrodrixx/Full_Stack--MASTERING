@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-// In here we made our collection schema and we exported so we could use it at index.js file
+// In here we made our collection schema and we exported so we could use it at app.js file
 const todoTaskSchema = new mongoose.Schema({
   content: {
     type: String,

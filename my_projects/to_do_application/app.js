@@ -67,7 +67,7 @@ app.route('/remove/:id').get((req, res) => {
 
 // Connection to DB
 mongoose.set('useFindAndModify', false);
-// DB_CONNECT credentials from .env file
+// DB_CONNECT credentials from .env file.
 mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
   console.log('Connected to DB!');
   app.listen(PORT, () => console.log('Server Up and Running'));
