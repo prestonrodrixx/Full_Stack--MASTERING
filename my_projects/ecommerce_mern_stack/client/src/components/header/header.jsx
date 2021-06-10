@@ -1,9 +1,19 @@
+import { AppBar, Toolbar, makeStyles } from '@material-ui/core';
 
+const useStyles = makeStyles({
+    header: {
 
+    }
+})
 
 const Header = () => {
+    const classes = useStyles();
     return (
-        <p>Hi from header.</p>
+        <AppBar position="static">
+            <Toolbar>
+
+            </Toolbar>
+        </AppBar>
     )
 }
 
