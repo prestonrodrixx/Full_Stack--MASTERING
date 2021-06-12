@@ -15,7 +15,7 @@
       <div class="row">
         <div class="col-12 col-md-6 col-lg-5 mx-auto text-center py-4">
           <h2 class="text-center">Enter a Text</h2>
-          <form action="/add" method="post">
+          <form action="/add" method="POST">
             <div class="form-group">
               <input
                 class="form-control"
@@ -31,6 +31,23 @@
           </form>
         </div>
       </div>
+      <!-- // -->
+      <!-- // -->
+      <% for(var tasks of data) { %>
+      <form action="/delete" method="POST" class="form-inline my-3">
+        <p><%= tasks.task %></p>
+        <% if(tasks.status) { %>
+        <button type="submit" class="btn btn-success mx-2">
+          Task Completed
+        </button>
+        <% } else { %>
+        <button type="submit" class="btn btn-primary mx-2" formaction="/update">
+          Mark Completed
+        </button>
+        <% } %>
+        <button type="submit" class="btn btn-danger mx-2">Delete</button>
+      </form>
+      <% } %>
     </div>
   </body>
 </html>

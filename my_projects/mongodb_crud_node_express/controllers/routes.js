@@ -1,8 +1,18 @@
 const router = require('express').Router();
 const tasks = require('../models/taskModel');
 
+// Get data from MongoDB
 router.get('/', (req, res) => {
-  res.render('index');
+  var myTasks;
+  tasks.find({}, (err, data) => {
+    if (err) {
+      console.log(err);
+    }
+    if (data) {
+      myTasks = data;
+    }
+    res.render('index', { data: myTasks });
+  });
 });
 
 // To Add data to MongoDB
@@ -15,4 +25,5 @@ router.post('/add', (req, res) => {
     res.redirect('/');
   });
 });
+
 module.exports = router;
