@@ -36,6 +36,7 @@
       <% for(var tasks of data) { %>
       <form action="/delete" method="POST" class="form-inline my-3">
         <p><%= tasks.task %></p>
+        <input type="hidden" name="id" value="<%= tasks._id %>" />
         <% if(tasks.status) { %>
         <button type="submit" class="btn btn-success mx-2">
           Task Completed
