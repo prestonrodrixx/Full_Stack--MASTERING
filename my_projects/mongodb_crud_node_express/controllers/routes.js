@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const tasks = require('../models/taskModel');
 
-// Get data from MongoDB
+// To Get Data from MongoDB
 router.get('/', (req, res) => {
   var myTasks;
   tasks.find({}, (err, data) => {
@@ -15,7 +15,7 @@ router.get('/', (req, res) => {
   });
 });
 
-// To Add data to MongoDB
+// To Add Data to MongoDB
 router.post('/add', (req, res) => {
   const task = req.body.task;
   tasks({ task: task }).save(function (err, doc) {
@@ -26,7 +26,15 @@ router.post('/add', (req, res) => {
   });
 });
 
-// To Delete data to MongoDB
+// To Update Data from MongoDB
+router.post('/update', (req, res) => {
+  const id = req.body.id;
+  tasks.findOneAndUpdate({ _id: id }, { status: true }, (err, doc) => {
+    res.redirect('/');
+  });
+});
+
+// To Delete Data from MongoDB
 router.post('/delete', (req, res) => {
   const id = req.body.id;
   tasks.findOneAndRemove({ _id: id }, (err, doc) => {
