@@ -35,19 +35,19 @@
       <!-- // -->
       <!-- // -->
       <% for(var tasks of data) { %>
-      <form action="/delete" method="POST" class="form-inline my-3">
+      <form action="/update" method="POST" class="form-inline my-3">
         <p><%= tasks.task %></p>
         <input type="hidden" name="id" value="<%= tasks._id %>" />
         <% if(tasks.status) { %>
-        <button type="submit" class="btn btn-success mx-2">
-          Task Completed
-        </button>
+        <button class="btn btn-success mx-2">Task Completed</button>
         <% } else { %>
         <button type="submit" class="btn btn-primary mx-2" formaction="/update">
           Mark Completed
         </button>
         <% } %>
-        <button type="submit" class="btn btn-danger mx-2">Delete</button>
+        <button type="submit" class="btn btn-danger mx-2" formaction="/delete">
+          Delete
+        </button>
       </form>
       <% } %>
     </div>
