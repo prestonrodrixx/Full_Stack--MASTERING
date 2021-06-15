@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 80px;
+  height: 100px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -43,6 +43,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.container {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 25px 30px;
+  border: 2px solid #21262d;
+  border-radius: 25px;
+}
+
+.title {
+  text-align: center;
+  color: yellowgreen;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
 }
 
 .App-link {
