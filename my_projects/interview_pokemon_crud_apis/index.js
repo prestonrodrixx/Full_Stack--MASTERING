@@ -2,10 +2,11 @@ const express = require('express');
 const app = express();
 const routes = require('./controllers/routes');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 
+const dotenv = require('dotenv');
 dotenv.config();
 
+// process.env.PORT from .env file.
 const PORT = process.env.PORT;
 
 app.use(express.urlencoded({ extended: true }));
@@ -25,6 +26,7 @@ mongoose.connect(
     useCreateIndex: true,
   },
   (err) => {
+    // If errors in connecting to Database.
     if (err) {
       console.log(err);
       return;
@@ -33,8 +35,10 @@ mongoose.connect(
   }
 );
 
+// All CRUD operation here...
 app.use(routes);
 
-app.listen(PORT, () => {
-  console.log('Server Started on PORT:', PORT);
+app.listen(PORT, (err) => {
+  if (err) console.log(err);
+  console.log('Server listening on PORT', PORT);
 });

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const pokedata = require('../models/ponkemonModel');
 
+// Home Page where you can add a pokemon
 router.get('/', (req, res) => {
   var myPokemons;
   pokedata.find({}, (err, data) => {
@@ -14,6 +15,7 @@ router.get('/', (req, res) => {
   });
 });
 
+// The View All Pokemon Page
 router.get('/view-all', (req, res) => {
   var myPokemons;
   pokedata.find({}, (err, data) => {
@@ -57,7 +59,7 @@ router.post('/add', (req, res) => {
   });
 });
 
-// To view data of specific id
+// To view data of specific id to update
 router.get('/update/:id', (req, res, next) => {
   var myPokemons;
   const pokemonId = req.params.id;
@@ -72,7 +74,7 @@ router.get('/update/:id', (req, res, next) => {
   });
 });
 
-// To Update Data from MongoDB
+// To Update Data from MongoDB based on ID
 router.post('/update', (req, res) => {
   const id = req.body.id;
   const pokemonname = req.body.pokemonname;
@@ -103,7 +105,7 @@ router.post('/update', (req, res) => {
   );
 });
 
-// To Delete Data from MongoDB
+// To Delete Data from MongoDB based on ID
 router.get('/delete/:id', (req, res) => {
   const id = req.params.id;
   pokedata.findOneAndRemove({ _id: id }, () => {
