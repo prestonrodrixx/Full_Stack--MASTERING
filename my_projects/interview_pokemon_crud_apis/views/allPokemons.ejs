@@ -12,9 +12,9 @@
     <a href="http://localhost:3000/view-all">All Pokemons</a>
     <!-- To view pokemon data -->
     <% if (data[0] != null) { %>
-        <h1 class="h1">All Pokemons</h1>
+        <h1 class="h1">All Available Pokemons</h1>
     <% } else { %>
-        <h1 class="h1">No Pokemon Data</h1>
+        <h1 class="h1">No Pokemons Available</h1>
     <% } %>
         <% for(var pokemons of data) { %>
             <div class="divs">
