@@ -23,8 +23,7 @@ router.get('/view-all', (req, res) => {
     if (data) {
       myPokemons = data;
     }
-    res.render('allpokemons', { data: myPokemons, ids: myPokemons._id });
-    console.log(myPokemons[0])
+    res.render('allpokemons', { data: myPokemons });
   });
 });
 
