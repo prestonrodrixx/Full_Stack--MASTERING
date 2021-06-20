@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Pokemon</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a href="http://localhost:3000/">Add Pokemon</a> &nbsp;
+    <a href="http://localhost:3000/view-all">All Pokemons</a>
+    <h1 class="h1">Add Pokemon</h1>
+    <div>
+        <form action="/add" method="POST">
+            Pokemon Name: <input class="input" type="text" name="pokemonname" placeholder="Enter Pokemon Name" required /> <br>
+            Max CP: <input class="input" type="number" name="maxcp" placeholder="Enter Max CP" required /> <br>
+            Attack: <input class="input" type="number" name="attack" placeholder="Enter Attack" required /> <br>
+            Defence: <input class="input" type="number" name="defence" placeholder="Enter Defence" required /> <br>
+            Stamina: <input class="input" type="number" name="stamina" placeholder="Enter Stamina" required /> <br>
+            Family: <input class="input" name="family" placeholder="Enter Family" required /> <br>
+            Weaknesses: <input class="input" type="text" name="weaknesses" placeholder="Enter Weaknesses" required /> <br>
+            Resistances: <input class="input" type="text" name="resistances" placeholder="Enter Resistances" required /> <br>
+            Description: <br> <textarea class="input" name="description" cols="60" rows="10" placeholder="Enter Description" required > </textarea><br> <br>
+        <button type="submit">Submit</button>
+        </form>
+    </div>
+  </body>
+</html>

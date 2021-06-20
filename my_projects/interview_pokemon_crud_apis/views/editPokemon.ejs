@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Pokemon</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a href="http://localhost:3000/">Add Pokemon</a> &nbsp;
+    <a href="http://localhost:3000/view-all">All Pokemons</a>
+    <h1 class="h1">Edit Pokemon</h1>
+     <!-- To edit pokemons -->
+        <div class="divs">
+        <form action="/update" method="POST">
+        <input type="hidden" name="id" value="<%= pokemons._id %>" />
+        Pokemon Name: <input class="input" type="text" name="pokemonname" value="<%= pokemons.pokemonname %>" required /> <br>
+        Max CP: <input class="input" type="number" name="maxcp" value="<%= pokemons.maxcp %>" required /> <br>
+        Attack: <input class="input" type="number" name="attack" value="<%= pokemons.attack %>" required /> <br>
+        Defence: <input class="input" type="number" name="defence" value="<%= pokemons.defence %>" required /> <br>
+        Stamina: <input class="input" type="number" name="stamina" value="<%= pokemons.stamina %>" required /> <br>
+        Family: <input class="input" name="family" value="<%= pokemons.family %>" required /> <br>
+        Weaknesses: <input class="input" type="text" name="weaknesses" value="<%= pokemons.weaknesses %>" required /> <br>
+        Resistances: <input class="input" type="text" name="resistances" value="<%= pokemons.resistances %>" required /> <br>
+        Description: <br> <textarea class="input" name="description" cols="60" rows="10" required ><%= pokemons.description %></textarea><br> <br>
+          <button type="submit">Update</button>
+        </form>
+    </div>
+
+
+    </body>
+    </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon All Data</title>
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <a href="http://localhost:3000/">Add Pokemon</a> &nbsp;
+    <a href="http://localhost:3000/view-all">All Pokemons</a>
+    <h1 class="h1">All Pokemons</h1>
+    <!-- To view all pokemons -->
+    <% for(var pokemons of data) { %>
+        <div class="divs">
+        <form action="/update" method="get" class="form-inline my-3">
+          <p>Pokemon Name: <%= pokemons.pokemonname %></p> 
+          <p>Max CP: <%= pokemons.maxcp %></p> 
+          <p>Attack: <%= pokemons.attack %></p> 
+          <p>Defence: <%= pokemons.defence %></p> 
+          <p>Stamina: <%= pokemons.stamina %></p> 
+          <p>Family: <%= pokemons.family %></p> 
+          <p>Weaknesses: <%= pokemons.weaknesses %></p> 
+          <p>Resistances: <%= pokemons.resistances %></p> 
+          <p>Description: <%= pokemons.description %></p> 
+          <button type="submit" formaction="/update/<%= pokemons._id %>">Edit</button>
+          <button type="submit" formaction="/delete/<%= pokemons._id %>">Delete</button>
+        </form>
+    </div>
+    <% } %>
+</body>
+</html>
