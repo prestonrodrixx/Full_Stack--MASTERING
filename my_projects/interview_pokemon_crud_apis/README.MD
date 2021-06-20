@@ -1,4 +1,4 @@
-### interview_pokemon_crud_apis
+### Interview Pokemon CRUD Apis
 
 1. Open the directory in terminal
 2. run "npm install:
