@@ -10,12 +10,13 @@
 <body>
     <a href="http://localhost:3000/">Add Pokemon</a> &nbsp;
     <a href="http://localhost:3000/view-all">All Pokemons</a>
-    <!-- To view all pokemons -->
-    <% if (data[0] == null) { %>
-        <h1 class="h1">No Pokemon Data</h1>
+    <!-- To view pokemon data -->
+    <% if (data[0] != null) { %>
+        <h1 class="h1">All Pokemons</h1>
     <% } else { %>
+        <h1 class="h1">No Pokemon Data</h1>
+    <% } %>
         <% for(var pokemons of data) { %>
-            <h1 class="h1">All Pokemons</h1>
             <div class="divs">
             <form action="/update" method="get" class="form-inline my-3">
               <p>Pokemon Name: <%= pokemons.pokemonname %></p> 
@@ -31,8 +32,6 @@
               <button type="submit" formaction="/delete/<%= pokemons._id %>">Delete</button>
             </form>
         </div>
-        <% } %>
     <% } %>
-    
 </body>
 </html>
