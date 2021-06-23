@@ -2,10 +2,10 @@ const express = require('express');
 const router = express.Router();
 const { projects } = require('../data');
 const { authUser, authRole } = require('../basicAuth');
-const { canViewProject } = require('../permissions/project');
+const { canViewProject, scopedProjects } = require('../permissions/project');
 
-router.get('/', (req, res) => {
-  res.json(projects);
+router.get('/', authUser, (req, res) => {
+  res.json(scopedProjects(req.user, projects));
 });
 
 router.get('/:projectId', setProject, authUser, authGetProject, (req, res) => {

@@ -6,11 +6,12 @@ const projectRouter = require('./routes/projects');
 
 app.use(express.json());
 app.use(setUser);
-app.use('/projects', projectRouter);
 
 app.get('/', (req, res) => {
   res.send('Home Page');
 });
+
+app.use('/projects', projectRouter);
 
 // Authentication the user
 app.get('/dashboard', authUser, (req, res) => {
