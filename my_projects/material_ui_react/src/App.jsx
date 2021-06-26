@@ -1,7 +1,10 @@
 import React from 'react';
 import { Typography, AppBar, Button, Card, CardActions, CardContent, CardMedia, CssBaseline, Grid, Toolbar, Container } from '@material-ui/core';
 import { PhotoCamera } from '@material-ui/icons';
+
 import useStyles from './styles';
+
+const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const App = () => {
     const classes = useStyles();
@@ -40,14 +43,21 @@ const App = () => {
                 </div>
                 <Container className={classes.cardGrid} maxWidth="md">
                     <Grid container spacing={4}>
-                        <Grid item>
-                            <Card className={classes.card}>
-                                <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title="Image Title"/>
-                                <CardContent className={classes.cardContent}>
-                                    <Typography gutterBottom variant="h5">Hello</Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
+                        {cards.map(() => (
+                            <Grid item>
+                                <Card className={classes.card}>
+                                    <CardMedia className={classes.cardMedia} image="https://source.unsplash.com/random" title="Image Title" />
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography gutterBottom variant="h5">Heading</Typography>
+                                        <Typography variant="p">Here you will find the card content.</Typography>
+                                    </CardContent>
+                                    <CardActions>
+                                        <Button size="small" variant="contained" color="primary">View</Button>
+                                        <Button size="small" variant="contained" color="secondary">Edit</Button>
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        ))}
                     </Grid>
                 </Container>
             </main>
