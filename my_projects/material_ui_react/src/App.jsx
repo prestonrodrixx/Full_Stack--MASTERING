@@ -61,6 +61,11 @@ const App = () => {
                     </Grid>
                 </Container>
             </main>
+            <footer className={classes.footer}>
+                <Typography variant="h6" align="center" color="textSecondary">
+                    By Preston Rodrigues
+                </Typography>
+            </footer>
         </>
     );
 }

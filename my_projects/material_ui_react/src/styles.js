@@ -29,6 +29,9 @@ const useStyles = makeStyles((theme) => ({
     ustifyContent: 'center',
     justifyContent: 'center',
   },
+  footer: {
+      padding: '50px',
+  }
 }));
 
 export default useStyles;
