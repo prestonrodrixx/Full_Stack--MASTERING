@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
+  cardActions: {
+    ustifyContent: 'center',
+    justifyContent: 'center',
+  },
 }));
 
 export default useStyles;
