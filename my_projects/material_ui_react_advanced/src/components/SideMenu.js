@@ -17,7 +17,7 @@ const style = {
 
 const SideMenu = (props) => {
   const { classes } = props;
-  return <div className={classes.sideMenu}></div>;
+  return <div className={classes.sideMenu} xs={12} sm={6} md={4}></div>;
 };
 
 export default withStyles(style)(SideMenu);
