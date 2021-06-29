@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import SideMenu from '../components/SideMenu';
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, CssBaseline } from '@material-ui/core';
 import Header from '../components/Header';
 
 const useStyles = makeStyles({
@@ -19,6 +19,7 @@ function App() {
       <div className={classes.appMain}>
         <Header />
       </div>
+      <CssBaseline />
     </>
   );
 }
