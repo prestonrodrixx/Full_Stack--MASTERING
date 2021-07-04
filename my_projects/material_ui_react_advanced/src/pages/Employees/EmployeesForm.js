@@ -1,9 +1,9 @@
 import React from 'reacrt';
 
-export default function employeeform() {
+export default function EmployeeForm() {
     return (
         <div>
-            
+
         </div>
     )
 }

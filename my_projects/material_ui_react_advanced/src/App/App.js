@@ -8,8 +8,7 @@ import {
   ThemeProvider,
 } from '@material-ui/core';
 import Header from '../components/Header';
-import PageHeader from '../components/PageHeader';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+import Employees from '../pages/Employees/Emplyees';
 
 const theme = createMuiTheme({
   palette: {
@@ -57,8 +56,8 @@ function App() {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        <PageHeader title="Page Title" subTitle="Sub Title" icon={<PeopleAltIcon fontSize='medium'/>} />
       </div>
+      <Employees />
       <CssBaseline />
     </ThemeProvider>
   );
