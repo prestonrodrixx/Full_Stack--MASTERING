@@ -1,4 +1,4 @@
-import React from 'reacrt';
+import React from 'react';
 
 export default function EmployeeForm() {
     return (

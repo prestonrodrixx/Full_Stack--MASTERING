@@ -1,6 +1,6 @@
-import React from 'reacrt';
-import EmployeeForm from './EmployeesForm';
-import PageHeader from '../components/PageHeader';
+import React from 'react';
+import EmployeeForm from './EmployeeForm';
+import PageHeader from '../../components/PageHeader';
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
 export default function Employees() {

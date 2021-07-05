@@ -8,7 +8,7 @@ import {
   ThemeProvider,
 } from '@material-ui/core';
 import Header from '../components/Header';
-import Employees from '../pages/Employees/Emplyees';
+import Employees from '../pages/Employees/Employees';
 
 const theme = createMuiTheme({
   palette: {
