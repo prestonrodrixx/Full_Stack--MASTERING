@@ -1,8 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 import SideMenu from '../components/SideMenu';
-import { makeStyles, CssBaseline } from '@material-ui/core';
+import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
 import Header from '../components/Header';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#333996',
+      light: '#3c44b126',
+    },
+    secondary: {
+      main: '#f83245',
+      light: '#f8324526',
+    },
+    background: {
+      default: '#f4f5fd'
+    }
+  },
+});
 
 const useStyles = makeStyles({
   appMain: {
@@ -13,14 +29,15 @@ const useStyles = makeStyles({
 
 function App() {
   const classes = useStyles();
+  
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
       </div>
       <CssBaseline />
-    </>
+    </ThemeProvider>
   );
 }
 
