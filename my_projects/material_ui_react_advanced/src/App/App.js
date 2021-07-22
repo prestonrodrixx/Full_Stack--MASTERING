@@ -1,8 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
 import SideMenu from '../components/SideMenu';
-import { makeStyles, CssBaseline, createMuiTheme, ThemeProvider } from '@material-ui/core';
+import {
+  makeStyles,
+  CssBaseline,
+  createMuiTheme,
+  ThemeProvider,
+} from '@material-ui/core';
 import Header from '../components/Header';
+import PageHeader from '../components/PageHeader';
+import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
 
 const theme = createMuiTheme({
   palette: {
@@ -15,8 +22,8 @@ const theme = createMuiTheme({
       light: '#f8324526',
     },
     background: {
-      default: '#f4f5fd'
-    }
+      default: '#f4f5fd',
+    },
   },
 });
 
@@ -29,12 +36,13 @@ const useStyles = makeStyles({
 
 function App() {
   const classes = useStyles();
-  
+
   return (
     <ThemeProvider theme={theme}>
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
+        <PageHeader title="Page Title" subTitle="Sub Title" icon={<PeopleOutlineIcon/>} />
       </div>
       <CssBaseline />
     </ThemeProvider>
