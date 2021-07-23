@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core';
 import Header from '../components/Header';
 import PageHeader from '../components/PageHeader';
-import PeopleOutlineIcon from '@material-ui/icons/PeopleOutline';
+import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
 
 const theme = createMuiTheme({
   palette: {
@@ -25,6 +25,21 @@ const theme = createMuiTheme({
       default: '#f4f5fd',
     },
   },
+  shape: {
+    borderRadius: '12px'
+  },
+  overrides: {
+    MuiAppBar: {
+      root: {
+        transform: 'translateZ(0)',
+      }
+    }
+  },
+  props: {
+    MuiIconButton: {
+      disableRipple: true
+    }
+  }
 });
 
 const useStyles = makeStyles({
@@ -42,7 +57,7 @@ function App() {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        <PageHeader title="Page Title" subTitle="Sub Title" icon={<PeopleOutlineIcon/>} />
+        <PageHeader title="Page Title" subTitle="Sub Title" icon={<PeopleAltIcon fontSize='medium'/>} />
       </div>
       <CssBaseline />
     </ThemeProvider>
